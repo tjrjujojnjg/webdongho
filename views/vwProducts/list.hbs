@@ -1,0 +1,58 @@
+{{#section 'title.admin'}}
+Admin-Products
+{{/section}}
+<div class="card">
+  <div class="card-header d-flex justify-content-between bg-info text-white">
+    <h4>PRODUCTS</h4>
+    <a class="btn btn-outline" href="/admin/products/add" role="button">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Add Product
+    </a>
+  </div>
+  <div class="card-body">
+    {{#if this.empty}}
+      <h5 class="text-danger">Danh sách rổng, chưa có dử liệu.</h5>
+    {{else}}
+       <table class="table table-hover">
+        <thead>
+          <tr class="text-primary">
+            <th scope="col">#</th>
+            <th scope="col">ProName</th>
+            <th scope="col">Year</th>
+            <th scope="col">FullDes</th>
+            <th scope="col"> Price</th>
+            <th scope="col"> CatID</th>
+            <th scope="col"> Quantity</th>
+            <th scope="col">Img</th>
+            <th scope="col" class="text-right">Action</th>
+          </tr>
+        </thead> 
+        <tbody>
+              {{#each this.products}}
+                  <tr>
+                    <th scope="row">{{ProID}}</th>
+                    <td>{{ProName}}</td>
+                    <td>{{TinyDes}}</td>
+                    <td>{{FullDes}}</td>
+                    <td>{{Price}}</td>
+                    <td>{{CatID}}</td>
+                    <td>{{Quantity}}</td>
+                    <td>{{Img}}</td>
+                    <td class="text-right">
+                      <a class="btn btn-primary btn-sm" href="/admin/products/edit?id={{ProID}}" role="button">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm" href="/admin/products/del?id={{ProID}}" role="button" onclick="return confirm(`Bạn có chắc muốn xóa sản phẩm {{ProName}}`)">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      </a>
+                    </td>
+                  </tr>
+              {{/each}}
+            </tbody>
+          </table>
+    {{/if}}
+  </div>    
+  <div class="card-footer text-muted">
+    TTCNTT FOUR T
+  </div>
+</div>

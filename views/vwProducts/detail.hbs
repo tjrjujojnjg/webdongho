@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SGWatch-{{{_sections.title}}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    {{{_sections.css}}}
+    <link rel="stylesheet" href="../../public/css/shoppingcart.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    {{{_sections.js}}}
+    <script src="../../public/js/byCat.js"></script>
+    <script src="../../public/js/shoppingcart.js"></script>
+    {{!-- <script src="../../public/js/receiptdetails.js"></script> --}}
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-size: 16px;
+        }
+        .container1{
+            padding: 10px;
+            background-color: rgb(194, 195, 255);
+        }
+
+        .content .leftcolumn img {
+            height: auto;
+            width: 500px;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .content {
+            padding: 25px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+            display: flex;
+            height: auto;
+            width: 100%;
+        }
+
+        .content .leftcolumn {
+            margin: 15px;
+            padding: 10px;
+            width: 100%;
+            display: inline;
+            position: relative;
+
+        }
+
+        .content .rightcolumn {
+            margin: 15px;
+            padding: 10px;
+            width: 100%;
+            display: inline;
+            position: relative;
+            line-height: 2rem;
+            font-size: 16.5px;
+
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            width: 400px;
+            padding: 10px;
+            font-size: 16px;
+
+        }
+
+        .box .left {
+            padding: 10px;
+            color: rgb(226, 9, 9);
+            background-color: white;
+            border: 2px solid rgb(226, 9, 9);
+            border-radius: 10px;
+            width: 170px;
+        }
+
+        .box .right {
+            padding: 10px;
+            color: white;
+            background-color: rgb(226, 9, 9);
+            border: 2px solid rgb(150, 8, 8);
+            border-radius: 10px;
+            width: 170px;
+        }
+
+        .content3 {
+            padding: 16px 16px 25px 16px;
+            clear: both;
+            margin: 0px 0px 10px 0px;
+            padding: 15px;
+            height: auto;
+            width: 100%;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        .list img {
+            height: auto;
+            width: 250px;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .list {
+            padding: 16px 5px 25px 16px;
+            margin: 0px 0px 10px 0px;
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            list-style-type: square;
+            text-align: center;
+        }
+
+        .row1 {
+            padding: 16px 5px 25px 16px;
+            margin: 0px 10px 10px 0px;
+            font-weight: 1.2em;
+            width: 24%;
+            line-height: 25px;
+            border: 1px outset black;
+        }
+
+        .content2 {
+            padding: 16px 16px 25px 16px;
+            margin-top: 10px;
+            clear: both;
+            margin: 0px 0px 10px 0px;
+            padding: 15px;
+            font-weight: 1.2em;
+            width: 100%;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        .table-label {
+            font-weight: normal;
+        }
+
+        .container {
+            width: 100%;
+            background-color: rgba(233, 233, 233, 0.993);
+        }
+
+        .gioithieu {
+            line-height: 1.8rem;
+        }
+
+        .zoom {
+            transition: transform 0.2s;
+        }
+
+        .zoom:hover {
+            transform: scale(1.1);
+        }
+
+        .display {
+            overflow: hidden;
+        }
+
+        .zoomin img {
+            height: 200px;
+            width: 200px;
+            transition: all 2s ease;
+        }
+
+        .zoomin img:hover {
+            transform: scale(1.5);
+        }
+
+        .lentop {
+            display: none;
+            bottom: 40%;
+            right: 10px;
+            cursor: pointer;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .lentop div {
+            background: crimson;
+            border: 2px solid #fff;
+            border-radius: 45px;
+            padding: 11px 12.5px;
+            box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.3)
+        }
+
+        .lentop img {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            getData();
+            getListData();
+        });
+
+        function getData() {
+            var arr = window.location.href.split('/');
+            $.get("http://localhost:1081/products/getdetail/" + arr[arr.length - 1], function (data, status) {
+                $(".MaHang").html(data.ProID);
+                $(".Tendongho").html(data.ProName);
+                $(".masp").html(data.MSP);
+                $(".namSX").html(data.TinyDes);
+                $(".mau").html(data.Mau);
+                $(".DongSP").html(data.DongSP);
+                $(".Thamnuoc").html(data.Thamnuoc);
+                $(".KichTM").html(data.KichTM);
+                $(".VanhDH").html(data.VanhDH);
+                $(".NL").html(data.NL);
+                $(".ChatLV").html(data.ChatLV);
+                $(".DayDeo").html(data.DayDeo);
+                $(".Khoa").html(data.Khoa);
+                $(".Matkinh").html(data.Matkinh);
+                $(".SXtai").html(data.SXtai);
+                $(".DonGia").html(data.Price.toLocaleString('en') + ' VNĐ');
+                $(".FullDes").html(data.FullDes);
+                $(".FullDes1").html(data.FullDes1);
+                $(".FullDes2").html(data.FullDes2);
+                $(".Đonghoimg").attr("src", "/public/imgs/" + data.CatID + "/" + data.Img);
+
+                // kiểm tra sp còn hay không
+                if (data.Quantity >= 1) {
+                    $(".TTrang").html('Còn hàng');
+                }
+                else {
+                    $(".TTrang").html('Không còn hàng');
+                }
+            });
+        }
+
+        function getListData() {
+            var arr = window.location.href.split('/');
+            if (arr[arr.length - 1] <=  5) {
+                $.get("http://localhost:1081/products/listKl1/" + arr[arr.length - 1], function (data, status) {
+                    var spHTML = `<div class="list">content</div>`;
+                    var tmp = "";
+                    data.forEach((item) => {
+                        tmp += `
+                <div class="row1">
+                    <a href="/products/detail/${item['ProID']}"><img class="zoom" src='/public/imgs/${item['CatID']}/${item['Img']}'></br></a>
+                    <a style="color: black; text-decoration: none"><b>${item['ProName']}</b></a></br>
+                    <a style="text-decoration: none"><b>Giá:</b> <b style="color: red">${item['Price'].toLocaleString('en') + ' VNĐ'}</b></a></br>
+                </div>
+                    `;
+                    });
+                    console.log(tmp);
+                    spHTML = spHTML.replace('content', tmp);
+                    $('#show1').html(spHTML);
+                });
+
+                $.get("http://localhost:1081/products/listCL1/" + arr[arr.length - 1], function (data, status) {
+                    var spHTML = `<div class="list">content</div>`;
+                    var tmp = "";
+                    data.forEach((item) => {
+                        tmp += `
+                <div class="row1">
+                    <a href="/products/detail/${item['ProID']}"><img class="zoom" src='/public/imgs/${item['CatID']}/${item['Img']}'></br></a>
+                    <a style="color: black; text-decoration: none"><b>${item['ProName']}</b></a></br>
+                    <a style="text-decoration: none"><b>Giá:</b> <b style="color: red">${item['Price'].toLocaleString('en') + ' VNĐ'}</b></a></br>
+                </div>
+                    `;
+                    });
+                    console.log(tmp);
+                    spHTML = spHTML.replace('content', tmp);
+                    $('#show2').html(spHTML);
+                });
+            }
+            else if (arr[arr.length - 1] <= 17) {
+                $.get("http://localhost:1081/products/listKL7/" + arr[arr.length - 1], function (data, status) {
+                    var spHTML = `<div class="list">content</div>`;
+                    var tmp = "";
+                    data.forEach((item) => {
+                        tmp += `
+                <div class="row1">
+                    <a href="/products/detail/${item['ProID']}"><img class="zoom" src='/public/imgs/${item['CatID']}/${item['Img']}'></br></a>
+                    <a style="color: black; text-decoration: none"><b>${item['ProName']}</b></a></br>
+                    <a style="text-decoration: none"><b>Giá:</b> <b style="color: red">${item['Price'].toLocaleString('en') + ' VNĐ'}</b></a></br>
+                </div>
+                    `;
+                    });
+                    console.log(tmp);
+                    spHTML = spHTML.replace('content', tmp);
+                    $('#show1').html(spHTML);
+                });
+
+                $.get("http://localhost:1081/products/listCL7/" + arr[arr.length - 1], function (data, status) {
+                    var spHTML = `<div class="list">content</div>`;
+                    var tmp = "";
+                    data.forEach((item) => {
+                        tmp += `
+                <div class="row1">
+                    <a href="/products/detail/${item['ProID']}"><img class="zoom" src='/public/imgs/${item['CatID']}/${item['Img']}'></br></a>
+                    <a style="color: black; text-decoration: none"><b>${item['ProName']}</b></a></br>
+                    <a style="text-decoration: none"><b>Giá:</b> <b style="color: red">${item['Price'].toLocaleString('en') + ' VNĐ'}</b></a></br>
+                </div>
+                    `;
+                    });
+                    console.log(tmp);
+                    spHTML = spHTML.replace('content', tmp);
+                    $('#show2').html(spHTML);
+                });
+            }
+        }
+
+
+
+
+
+
+
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) $(".lentop").fadeIn();
+                else $(".lentop").fadeOut();
+            });
+            $(".lentop").click(function () {
+                $("body,html").animate({ scrollTop: 0 }, "fast");
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="container1">
+        <!-- Đầu  -->
+        <link rel="stylesheet" href="../../public/css/barner.css">
+    <header>
+      <table id="barner">
+        <thead>
+          <tr>
+            <th id="logo"><img src="../../public/imgs/barner/logo.jpg" alt=""></th>
+            <th class="tradeMark text-center">SAIGON WATCH</th>
+          </tr>
+        </thead>
+      </table>
+    </header>
+    {{>nav}}
+    <div class="container-fluid mt-3"> <!--cach doi tuong tren dau 3 px--></div>
+
+        <head class="header">
+        </head>
+        <!-- kết đầu  -->
+        <div class="container-inner breadcrumbs">
+            <ol class="breadcrumb" style="padding: 10px;">
+                <li class="0">
+                    <a href="http://localhost:1081/products/byCat/1" title="Trang chủ"
+                        style="color: red; text-decoration: none; font-weight: 600;">Trang chủ</a>
+                    <span>/</span>
+                </li>
+                <li class="1">
+                    <a title="Sản phẩm"> Sản phẩm </a>
+                    <span>/</span>
+                </li>
+                <li>
+                    <a> Đồng hồ <span class="Tendongho"></span></a>
+                </li>
+            </ol>
+        </div>
+
+        <!-- giữa -->
+        <div class="content">
+            <div class="leftcolumn">
+                <div class="zoomin display"><img class="Đonghoimg"></div>
+
+            </div>
+            <div class="rightcolumn">
+                <h2 class="Tendongho"></h2>
+                <div class="mota">
+                    <span>Mã sản phẩm: <b class="masp"></b></span></br>
+                    <span>Màu: <b class="mau"></b></span></br>
+                    <span>Sản xuất năm: <b class="namSX"></b></span></br>
+                </div></br>
+                <span class="pirce">
+                    <h1><b>Giá: </b><b class="DonGia" style="color: rgb(211, 13, 13);"></b></h1>
+                </span></br>
+                <span>Tình trạng: <b class="TTrang"></b></span></br>
+                <hr>
+                <span>Cam kết tất cả sản phẩm bán ra là <b>Chính Hãng 100%</b></span></br>
+                <span>Bảo hành từ 2 đến 5 năm theo đúng tiêu chuẩn của hãng</span></br>
+                <span>Giao hàng toàn quốc, hỗ trợ 24/7 về chất lượng sản phẩm</span></br>
+                <hr>
+                <div class="box">
+                    <button class="left" style="text-decoration: none"><b onclick="">
+                            Thêm vào giỏ hàng</b></button></br>
+                    <button class="right" style="text-decoration: none"><b onclick="">
+                            Mua sản phẩm</b></button>
+                </div>
+            </div>
+        </div>
+        <!-- kết giữa -->
+
+
+        {{!-- thông tin sản phẩm --}}
+        <div class="content2">
+            <h4><b>Thông số Kỹ thuật</b></h4>
+            <hr>
+            <table class="table table-success table-striped">
+                <tbody>
+                    <tr>
+                        <th class="table-label">Dòng sản phẩm: </th>
+                        <td class="DongSP"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-label">Thấm nước: </th>
+                        <td class="Thamnuoc"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-label">Kích thước mặt: </th>
+                        <td class="KichTM"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-label">Vành đồng hồ: </th>
+                        <td class="VanhDH"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-label">Năng lượng: </th>
+                        <td class="NL"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-label">Chất liệu vỏ: </th>
+                        <td class="ChatLV"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-label">Dây đeo: </th>
+                        <td class="DayDeo"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-label">Khóa: </th>
+                        <td class="Khoa"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-label">Mặt kính: </th>
+                        <td class="Matkinh"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-label">Sản xuất tại: </th>
+                        <td class="SXtai"></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="gioithieu">
+                <hr>
+                <h4><b>Đồng hồ <span class="Tendongho"></span></b></h4>
+                <p style="text-align: justify;font-weight: normal;" class="FullDes"></p>
+                <hr>
+                <h4><b>Thiết kế của <span class="Tendongho"></span></b></h4>
+                <p style="text-align: justify;font-weight: normal;" class="FullDes1"></p>
+                <hr>
+                <h4><b>Bên trong <span class="Tendongho"></span></b></h4>
+                <p style="text-align: justify;font-weight: normal;" class="FullDes2"></p>
+            </div>
+        </div>
+        <!-- kết thông tin -->
+
+        {{!-- list sản phẩm --}}
+
+
+        <div class="content3">
+            <h4><b>Sản phẩm cùng loại</b></h4>
+            <a style="color: rgb(211, 13, 13)">
+                <h4>Đồng Hồ</h4>
+            </a>
+            <hr>
+            <div id="show2"></div>
+
+
+            <h4><b>Các loại sản phẩm khác</b></h4>
+            <a style="color: rgb(211, 13, 13)">
+                <h4>Đồng Hồ</h4>
+            </a>
+            <hr>
+            <div id="show1"></div>
+
+        </div>
+        <div class='lentop'>
+            <div>
+                <img
+                    src='https://1.bp.blogspot.com/-k6sikOdzFXQ/VwqCKDosmEI/AAAAAAAAKxE/nLxLhkTIO6o3iE5ZWmtxo2bf4QHdzPQNQ/s1600/top.png' />
+            </div>
+        </div>
+        <!-- kết list -->
+
+
+
+
+
+
+        <!-- cuối -->
+        <div class="footer">
+            <footer class="bg-light text-center text-lg-start">
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2021 Đồng hồ:
+                    <a class="text-dark" href="http://localhost:1081/products/byCat/1">Official website</a>
+                </div>
+            </footer>
+        </div>
+        <!-- kết cuối -->
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

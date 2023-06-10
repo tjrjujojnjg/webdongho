@@ -1,0 +1,115 @@
+{{#section 'title'}}
+Products
+{{/section}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  #zoom {
+    transition: transform 0.2s;
+  }
+  #zoom:hover {
+    transform: scale(1.1);
+  }
+</style>
+<div class="card">
+  <div class="card-header d-flex justify-content-between bg-info text-white">
+    <h4>PRODUCTS</h4>
+  </div>
+  <div class="card-body">
+    {{#if this.empty}}
+      <h5 class="text-danger">Danh sách rổng, chưa có dử liệu.</h5>
+    {{else}}
+       <div class="card-body">
+        <div class="row">
+            {{#each this.products}}
+            <div class="col-sm-4 mb-3">
+                <div class="card h-100">
+                  <a href="/products/detail/{{ProID}}">
+                  <img src="/public/imgs/{{CatID}}/{{Img}}" alt="{{ProName}}" title="{{ProName}}" class="card-img-top" id="zoom">
+                  </a>
+                    <div class="card-body">
+                        <h6 class="card-title">{{ProName}}</h6>
+                        <h4 class="card-title text-danger">Giá: {{format_number Price}}</h4>
+                        <p class="card-text">Năm sản xuất: {{TinyDes}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-sm btn-outline-primary" href="/products/detail/{{ProID}}" role="button">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            Details
+                        </a>
+                        <a class="btn btn-sm btn-outline-success addToCart" href="javascript:;" role="button">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            Add to cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+      </div>
+    <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item {{#unless can_go_prev}} disabled{{/unless}}">
+        <a class="page-link" href="?page={{prev_value}}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          </a>
+      </li>
+      {{#each this.page_items}}
+      {{#if isActive}}
+      <li class="page-item active" aria-current="page">
+        <span class="page-link">
+          {{value}}
+          <span class="sr-only">(current)</span>
+        </span>
+      </li>
+      {{else}}
+      <li class="page-item">
+        <a class="page-link" href="?page={{value}}">{{value}}</a>
+      </li>
+      {{/if}}
+      {{/each}}
+      <li class="page-item {{#unless can_go_next}} disabled{{/unless}}">
+        <a class="page-link" href="?page={{next_value}}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+    </nav>
+        </div>
+    {{/if}}
+  </div>
+  {{!-- shopping cart  --}}
+   <div class="cartBox">
+      <div class="cart">
+          <i class="fa fa-close"></i>
+          <h1>Shopping Cart</h1>
+          <div class="displayCart"></div>
+          <div class="totalPriceCart">
+            <div class="subtotal">SubTotal :</div>
+            <div class="priceView">
+              <h6>0 VNĐ</h6>
+            </div>
+          </div>
+          <br>
+          {{!-- <button type="button" class="btn btn-primary btn-sm agree" >Agree To Buy</button> --}}
+          <a class="btn btn-primary btn-sm" href="/receiptdetails/add">Agree To Buy</a>
+      </div> 
+   </div>
+   {{!-- end shoppingcart --}} 
+  <div class="card-footer">
+    TTCNTT FOUR T
+  </div>
+</div>
+<style>
+  body{
+    position: relative;
+  }
+  .img-product-fly{
+    position: absolute;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    object-fit: cover ;
+    border-radius: 100%;
+    transition: all 1s ease;
+  }
+</style>
+{{!-- <img class="img-product-fly" src="../../public/imgs/1/01.png" alt=""> --}}

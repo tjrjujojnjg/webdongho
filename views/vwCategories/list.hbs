@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between bg-info text-white">
+    <h4>CATEGORIES</h4>
+    <a class="btn btn-outline" href="/admin/categories/add" role="button">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Add Category
+    </a>
+  </div>
+  <div class="card-body">
+    {{#if this.empty}}
+      <h5 class="text-danger">Danh sách rổng, chưa có dử liệu.</h5>
+    {{else}}
+       <table class="table table-hover">
+        <thead>
+          <tr class="text-primary">
+            <th scope="col">#</th>
+            <th scope="col">Category</th>
+            <th scope="col" class="text-right">Action</th>
+          </tr>
+        </thead> 
+        <tbody>
+              {{#each this.categories}}
+                  <tr>
+                    <th scope="row">{{CatID}}</th>
+                    <td>{{CatName}}</td>
+                    <td class="text-right">
+                      <a class="btn btn-primary btn-sm" href="/admin/categories/edit?id={{CatID}}" role="button">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm" href="/admin/categories/del?id={{CatID}}" role="button" onclick="return confirm(`Bạn có chắc muốn xóa hãng {{CatName}}`)">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      </a>
+                    </td>
+                  </tr>
+              {{/each}}
+            </tbody>
+          </table>
+    {{/if}}
+  </div>    
+  <div class="card-footer text-muted">
+    TTCNTT FOUR T
+  </div>
+</div>

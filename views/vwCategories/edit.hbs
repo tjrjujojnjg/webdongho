@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header progress-bar progress-bar-striped text-white">
+   <b>Edit Catgory</b> 
+  </div>
+  <div class="card-body">
+   <form method="post"  class="w-50"> 
+    {{!-- bỏ action --}}
+    <div class="form-group">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Category Name</div>
+        </div>
+        <input type="text" class="form-control" id="txtCategoryName" name="CatName" value="{{this.category.CatName}}" autofocus required>
+      </div>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" required>
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <a class="btn btn-success" href="/admin/categories/list" role="button" title="Back To List">
+    <i class="fa fa-backward" aria-hidden="true"></i>
+    </a>
+    <button type="submit" class="btn btn-primary" onclick="return confirm(`Bạn có chắc chắn muốn sửa {{this.category.CatName}} không ?`)" formaction="/admin/categories/update" >
+      <i class="fa fa-check" aria-hidden="true"></i>
+      Edit
+    </button>
+    <input type="hidden" name="CatID" id="" value="{{this.category.CatID}}">
+  </form>
+  </div>
+  <div class="card-footer text-muted">
+   TTCNTT FOUR T
+  </div>
+</div>

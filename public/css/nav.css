@@ -1,0 +1,13 @@
+.navbar{
+    background-image: linear-gradient(to right,rgba(14, 14, 97, 0.893),rgba(39, 39, 211, 0.822));
+    color: azure;
+}
+.text-nav{
+    color: azure;
+}
+.text-nav:hover{
+    font-size: larger;
+    font-weight: bolder;
+    color: yellowgreen;
+    transition: all 0.5s ease-out;
+}

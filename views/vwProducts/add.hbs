@@ -1,0 +1,69 @@
+<div class="card">
+  <div class="card-header progress-bar progress-bar-striped text-white">
+    New Product
+  </div>
+  <div class="card-body">
+   <form method="post" action="" class="w-50">
+    <div class="form-group">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Pro Name</div>
+        </div>
+        <input type="text" class="form-control" id="txtCategoryName" name="txtProName" autofocus >
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Year</div>
+        </div>
+        <input type="text" class="form-control" id="txtCategoryName" name="txtYear">
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Full Des</div>
+        </div>
+        <textarea class="form-control" required name="txtFullDes" id="exampleFormControlTextarea1" rows="4"></textarea>
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Price</div>
+        </div>
+        <input type="text" class="form-control" id="txtCategoryName" name="txtPrice">
+      </div>
+      <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">CatID</span>
+                <select class="form-select" name="CatID" aria-label="Default select example">
+                  {{#each lcCategories}}
+                    <option value="{{CatID}}">{{CatName}}</option>
+                  {{/each}}
+                </select>
+            </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Quantity</div>
+        </div>
+        <input type="number" class="form-control" id="txtCategoryName" name="txtQuantity" min="1">
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Img</div>
+        </div>
+        <input type="file" class="form-control" id="txtCategoryName" name="txtImg">
+      </div>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" required>
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <a class="btn btn-success" href="/admin/products/list" role="button" title="Back To List">
+      <i class="fa fa-backward" aria-hidden="true"></i>
+    </a>
+    <button type="submit" class="btn btn-primary">
+      <i class="fa fa-check" aria-hidden="true"></i>
+      Add
+    </button>
+  </form>
+  </div>
+  <div class="card-footer text-muted">
+   TTCNTT FOUR T
+  </div>
+</div>

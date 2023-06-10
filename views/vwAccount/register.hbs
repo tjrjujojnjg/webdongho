@@ -1,0 +1,139 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v4.7.0/css/all.css">
+{{/section}}
+{{#section 'title'}}
+ Register
+{{/section}}
+{{#section 'js'}}
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+<script>
+  $('#txtDOB').datetimepicker({
+  format:'d/m/Y',
+  timepicker:false,
+  mask:true,
+  });
+  $('#frmRegister').on('submit',function(e){
+  {{!-- alert('submit called'); --}}
+  e.preventDefault();
+  if(validate())
+  $('#frmRegister').off('submit').submit();
+  });
+  function validate(){
+  return true;
+}
+
+  function myfuntion(){
+  var pss=document.getElementById('password').value;
+  var cfm=document.getElementById('confirm').value;
+  if(pss === cfm){
+    return true;
+  }
+  return false;
+}
+ var txtname = document.getElementById('txtname');
+  txtname.addEventListener('keyup', function(){
+    if(myfuntion() == false)
+    alert('password và confirm password chưa đúng, mời nhập lại');
+  });
+</script>
+
+{{/section}} 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<div class="card text-center">
+  <div class="card-header progress-bar progress-bar-striped text-white">
+    <b>REGISTER</b>
+  </div>
+  <div class="card-body">
+    <div class="card text-dark bg-info mb-3" style="max-width: 35rem;">
+    <div class="card-header"><h5 class="card-title">Input Information</h5></div>
+    <div class="card-body">
+      <form method="post" action="" id="frmRegister" class="row g-3">
+      <div class="col-md-6">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
+          <input type="text" name="username" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" autofocus>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
+            <input type="password" id="password" name="password" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <div id="eye">
+              <i class="fa fa-eye"></i>
+            </div>
+          </div>
+      </div>
+      <div class="col-6">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Confirm Password</span>
+          <input type="password" Confirm="confirm" id="confirm" onblur="myfuntion()" required  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          <div id="eyes">
+            <i class="fa fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+          <input type="text" id="txtname" name="name" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" autofocus>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+          <input type="email" required name="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" autofocus>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">DOB</span>
+          <input type="text" id="txtDOB" name="dob" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" autofocus>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" required id="gridCheck">
+          <label class="form-check-label" for="gridCheck">Check me out</label>
+        </div>
+      </div>
+      <div class="col-6">
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-check" aria-hidden="true"></i>
+            Register
+        </button>
+      </div>
+      </form>
+      </div>
+      <div class="card-footer bg-transparent border-success">Have already an account? <a href="/account/login" class="fw-bold text-body">Login here</a></div>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script >
+    $(document).ready(function(){
+    $('#eye').click(function(){
+        $(this).toggleClass('open');
+        $(this).children('i').toggleClass('fa-eye-slash fa-eye');
+        if($(this).hasClass('open')){
+            $(this).prev().attr('type', 'text');
+        }else{
+            $(this).prev().attr('type', 'password');
+        }
+    });
+
+    $('#eyes').click(function(){
+        $(this).toggleClass('open');
+        $(this).children('i').toggleClass('fa-eye-slash fa-eye');
+        if($(this).hasClass('open')){
+            $(this).prev().attr('type', 'text');
+        }else{
+            $(this).prev().attr('type', 'password');
+}
+    });
+});
+    </script>
+{{!--  --}}

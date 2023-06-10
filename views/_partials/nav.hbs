@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="../../public/css/nav.css">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+          {{!-- <ul class="navbar-nav mr-auto"> --}}
+            <li class="nav-item active">
+              <a class="nav-link" href="/"><i class="fa fa-home text-nav">Home</i><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about"><i class="fa fa-exclamation text-nav">About</i></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                <i class="text-nav">Dropdown</i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 mr-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <ul class="navbar-nav">
+            {{#if lcIsAuthenticated}}
+               <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" aria-hidden="true" href="#" id="navbarDropdown" role="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                Welcome, <b>{{lcAuthUser.name}}</b>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/account/profile">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                Account Profile
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/account/logout">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                Logout
+                </a>
+              </div>
+            </li>
+            {{else}}
+              <li class="nav-item active">
+              <a class="nav-link" href="/account/login">
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+              Login
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/account/register">
+              <i class="fa fa-user-plus" aria-hidden="true"></i>
+              Register
+              </a>
+            </li>
+            {{/if}}
+          </ul>
+          <span class="iconShopping"><i class="fa fa-shopping-basket money"></i></span>
+        </div>
+</nav>

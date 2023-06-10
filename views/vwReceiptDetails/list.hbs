@@ -1,0 +1,24 @@
+<div class="card-body">
+       <table class="table table-hover">
+        <thead>
+          <tr class="text-primary">
+            <th scope="col">MaHD</th>
+            <th scope="col">ProName</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Into Total</th>
+          </tr>
+        </thead> 
+        <tbody>
+              {{#each this.receiptDetails}}
+                  <tr>
+                    <td>{{MaHD}}</td>
+                    <td>{{ProName}}</td>
+                    <td>{{Price}}</td>
+                    <td>{{Quantity}}</td>
+                    <td>{{IntoTotal}}</td>
+                  </tr>
+              {{/each}}
+            </tbody>
+          </table>
+  </div> 

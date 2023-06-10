@@ -1,0 +1,74 @@
+<div class="card">
+  <div class="card-header progress-bar progress-bar-striped text-white">
+   <b>Edit Product</b> 
+  </div>
+  <div class="card-body">
+   <form method="post"  class="w-50"> 
+    {{!-- bỏ action --}}
+    <div class="form-group">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Pro Name</div>
+        </div>
+        <input type="text" class="form-control" id="txtCategoryName" name="ProName" value="{{this.product.ProName}}" autofocus>
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Year</div>
+        </div>
+        <input type="text" class="form-control" id="txtCategoryName" name="Year" value="{{this.product.Year}}">
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Full Des</div>
+        </div>
+        <input type="text" class="form-control" id="txtCategoryName" name="FullDes" value="{{this.product.FullDes}}">
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Price</div>
+        </div>
+        <input type="text" class="form-control" id="txtCategoryName" name="Price" value="{{this.product.Price}}">
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Cat Id</div>
+          <select class="form-select" name="CatID" aria-label="Default select example">
+                  <option selected value="{{this.product.CatID}}">{{this.product.CatID}}</option>
+                  {{#each lcCategories}}
+                    <option value="{{CatID}}">{{CatName}}</option>
+                  {{/each}}
+                </select>
+        </div>
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Quantity</div>
+        </div>
+        <input type="number" class="form-control" id="txtCategoryName" name="Quantity" value="{{this.product.Quantity}}" min="1">
+      </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Img</div>
+        </div>
+        <input type="file" class="form-control" id="txtCategoryName" name="Img" value="{{this.product.Img}}">
+      </div>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" required>
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <a class="btn btn-success" href="/admin/products/list" role="button" title="Back To List">
+    <i class="fa fa-backward" aria-hidden="true"></i>
+    </a>
+    <button type="submit" class="btn btn-primary" onclick="return confirm(`Bạn có chắc chắn muốn sửa {{this.product.ProName}} không ?`)" formaction="/admin/products/update" >
+      <i class="fa fa-check" aria-hidden="true"></i>
+      Edit
+    </button>
+    <input type="hidden" name="ProID" id="" value="{{this.product.ProID}}">
+  </form>
+  </div>
+  <div class="card-footer text-muted">
+   TTCNTT FOUR T
+  </div>
+</div>
